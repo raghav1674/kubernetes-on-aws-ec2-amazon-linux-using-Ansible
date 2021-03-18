@@ -1,0 +1,12 @@
+- hosts: kubeslave
+  tasks:
+  - name: copy the join command file
+    copy:
+      src: files/join_command.sh
+      dest: /root/join_command.sh
+      mode: "u+rwx"
+    register: join_command_copied
+
+  - name: running kubeadm join command
+    shell: "/root/join_command.sh"
+    when: join_command_copied.changed 
