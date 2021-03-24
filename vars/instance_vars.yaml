@@ -1,8 +1,8 @@
       region_val: ap-south-1
-      key_name_val: KEY NAME WITHOUT .pem
+      key_name_val: KEY NAME
       instance_type_val: t2.micro
       image_val: ami-081bb417559035fe8
       count_val: 3
-      tag_name: kubernetes-ansible
+      tag_name: kube-cluster
       vpc_subnet_id_val: SUBNET ID
       assign_public_ip_val: yes

@@ -10,7 +10,7 @@
   - name: executing kubeadm init command
     command: 'kubeadm init  --apiserver-advertise-address=0.0.0.0  --apiserver-cert-extra-sans="{{ item }}" --ignore-preflight-errors=NumCPU --ignore-preflight-errors=Mem'
     loop: "{{ groups['kubemaster'] }}"
-    when: kubelet_running.changed 
+    ignore_errors: true 
 
 
   - name: creating .kube folder
@@ -36,7 +36,7 @@
   - name: fetch the token command
     fetch:
      src: /join_command.sh 
-     dest: files/join_command.sh
+     dest: ../files/join_command.sh
 
 
   - name: installing weavenet for vxlan

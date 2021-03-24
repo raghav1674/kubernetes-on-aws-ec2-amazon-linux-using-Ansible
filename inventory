@@ -1,11 +1,11 @@
 [kubemaster]
-MASTER IPS
+3.6.36.58
 
 
 
 [kubeslave]
-SLAVE IPS
-
+52.66.208.160
+13.232.160.50
 
 [kubernetes:children]
 kubeslave

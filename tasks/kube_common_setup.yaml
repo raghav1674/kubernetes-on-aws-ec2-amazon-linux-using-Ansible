@@ -52,7 +52,7 @@
   - name: changing cgroupfs driver of docker
     copy:
       dest: /etc/docker/daemon.json
-      src: docker_daemon.json
+      src: ../files/docker_daemon.json
     notify: restart docker engine
 
 

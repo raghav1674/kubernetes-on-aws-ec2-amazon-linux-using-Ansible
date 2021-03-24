@@ -2,11 +2,12 @@
   tasks:
   - name: copy the join command file
     copy:
-      src: files/join_command.sh
-      dest: /root/join_command.sh
-      mode: "u+rwx"
+      src: "../files/join_command.sh"
+      dest: "/root/"
+      mode: "+x"
     register: join_command_copied
 
+  
   - name: running kubeadm join command
-    shell: "/root/join_command.sh"
-    when: join_command_copied.changed 
+    command: "bash /root/join_command.sh/{{ groups['kubemaster'][0] }}/join_command.sh"
+    

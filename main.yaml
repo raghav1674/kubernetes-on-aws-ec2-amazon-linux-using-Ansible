@@ -1,6 +1,6 @@
 
-- name: launcing ec2 instances 
-  import_playbook: tasks/launch_ec2_instances.yaml
+#- name: launcing ec2 instances 
+# import_playbook: tasks/launch_ec2_instances.yaml
 
 - name: installing commands and utilities on both slave and master 
   import_playbook: tasks/kube_common_setup.yaml
